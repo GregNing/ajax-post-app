@@ -1,0 +1,7 @@
+ <% if @post.valid? %>
+ $("#post-list").prepend("<%=j render :partial => "post", :locals => { :post => @post } %>");
+<!-- 其中 j 等同于 escape_javascript，这会做逸出好让 partial 字串可以变成合法的 JavaScript 字串： -->
+ $("#post_content").val("");
+ <% else %>
+   alert("貼文失敗");
+ <% end %>
